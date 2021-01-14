@@ -29,6 +29,10 @@ sketchReset.addEventListener('click',()=>{
 });
 });
 sketchSize.addEventListener('click',()=>{
+    let divs=document.querySelectorAll('.hover');
+    divs.forEach((grid)=>{
+        grid.style.background="white";
+});
     input=prompt("If you want to change the layout please input a value between 1 to 100","1");
     if (input){
     sketch(input);
