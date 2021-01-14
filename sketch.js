@@ -18,14 +18,22 @@ let divs=document.querySelectorAll('.hover');
     });
 });
 }
-sketch(50);
+sketch(16);
 let input='';
-let button=document.querySelector('button');
-button.addEventListener('click',()=>{
+let sketchSize=document.querySelector('#size');
+let sketchReset=document.querySelector('#reset');
+sketchReset.addEventListener('click',()=>{
     let divs=document.querySelectorAll('.hover');
     divs.forEach((grid)=>{
-        grid.style.background="white"
+        grid.style.background="white";
 });
+});
+sketchSize.addEventListener('click',()=>{
     input=prompt("If you want to change the layout please input a value between 1 to 100","1");
-    sketch(input)
+    if (input){
+    sketch(input);
+    }
+    else {
+        sketch(16);
+    }
 });

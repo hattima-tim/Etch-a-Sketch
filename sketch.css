@@ -1,6 +1,10 @@
+body{
+    width: 700px;
+    height: 700px;
+}
 #container {
-display: grid;
-width: 550px;
-height: 550px;
-border: 1px solid black;
+    display: grid;
+    width: 70%;
+    height: 70%;
+    border: 1px solid black;
 }
