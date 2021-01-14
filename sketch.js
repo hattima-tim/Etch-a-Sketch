@@ -19,10 +19,13 @@ let divs=document.querySelectorAll('.hover');
 });
 }
 sketch(50);
-let input=''
+let input='';
 let button=document.querySelector('button');
 button.addEventListener('click',()=>{
-
+    let divs=document.querySelectorAll('.hover');
+    divs.forEach((grid)=>{
+        grid.style.background="white"
+});
     input=prompt("If you want to change the layout please input a value between 1 to 100","1");
-    sketch(input);
+    sketch(input)
 });
