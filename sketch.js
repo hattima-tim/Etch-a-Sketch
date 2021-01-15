@@ -1,43 +1,41 @@
-let div=document.querySelector('#container');
-function sketch(a){
+let container=document.querySelector('#container');
+function sketchPad(a){
     let gridSquare=a*a;
-    div.style.gridTemplateRows=`repeat(${a},1fr)`;
-    div.style.gridTemplateColumns=`repeat(${a},1fr)`;
-    let divGrid=[];
+    container.style.gridTemplateRows=`repeat(${a},1fr)`;
+    container.style.gridTemplateColumns=`repeat(${a},1fr)`;
+    let squareDiv=[];
 for (let i=0;i<gridSquare;i++){
-    divGrid[i]=document.createElement('div');
-    divGrid[i].classList.add('hover');
+    squareDiv[i]=document.createElement('div');
+    squareDiv[i].classList.add('hover');
+    container.appendChild(squareDiv[i]);
 }
-for (let i=0;i<gridSquare;i++){
-    div.appendChild(divGrid[i]);
+let hover=document.querySelectorAll('.hover');
+    hover.forEach((containerChilds)=>{
+        containerChilds.addEventListener('mouseover',()=>{
+            containerChilds.style.background="black";
+        });
+    });
 }
-let divs=document.querySelectorAll('.hover');
-    divs.forEach((grid)=>{
-        grid.addEventListener('mouseover',()=>{
-            grid.style.background="black"
+sketchPad(16);
+let input='';
+let sketchPadSize=document.querySelector('#size');
+let sketchPadReset=document.querySelector('#reset');
+sketchPadReset.addEventListener('click',()=>{
+    let hover=document.querySelectorAll('.hover');
+    hover.forEach((containerChilds)=>{
+        containerChilds.style.background="white";
     });
 });
-}
-sketch(16);
-let input='';
-let sketchSize=document.querySelector('#size');
-let sketchReset=document.querySelector('#reset');
-sketchReset.addEventListener('click',()=>{
-    let divs=document.querySelectorAll('.hover');
-    divs.forEach((grid)=>{
-        grid.style.background="white";
-});
-});
-sketchSize.addEventListener('click',()=>{
-    let divs=document.querySelectorAll('.hover');
-    divs.forEach((grid)=>{
-        grid.style.background="white";
-});
-    input=prompt("If you want to change the layout please input a value between 1 to 100","1");
+sketchPadSize.addEventListener('click',()=>{
+    let hover=document.querySelectorAll('.hover');
+    hover.forEach((containerChilds)=>{
+        containerChilds.style.background="white";
+    });
+    input=prompt("Please input a value between 2 to 100","2");
     if (input){
-    sketch(input);
+    sketchPad(input);
     }
     else {
-        sketch(16);
+        sketchPad(16);
     }
 });
