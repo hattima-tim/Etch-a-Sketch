@@ -34,7 +34,12 @@ sketchPadSize.addEventListener('click',()=>{
     hover.forEach((containerChilds)=>{
         containerChilds.style.background="white";
     });
-    input=prompt("Please input a value between 2 to 100","2");
+    while (true){
+        input=prompt("Please input a value between 2 to 100","2");
+        if (input>1 && input<=100 || input==null){
+            break;
+        }
+    }
     if (input){
     sketchPad(input);
     }
