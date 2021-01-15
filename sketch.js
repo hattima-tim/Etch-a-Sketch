@@ -12,9 +12,9 @@ for (let i=0;i<gridSquare;i++){
 let hover=document.querySelectorAll('.hover');
     hover.forEach((containerChilds)=>{
         containerChilds.addEventListener('mouseover',()=>{
-            let rgbOne=Math.floor((Math.random()*250));
-            let rgbTwo=Math.floor((Math.random()*250));
-            let rgbThree=Math.floor((Math.random()*250));
+            let rgbOne=Math.floor((Math.random()*255)+160);
+            let rgbTwo=Math.floor((Math.random()*159)+60);
+            let rgbThree=Math.floor((Math.random()*59));
             containerChilds.style.background=`rgb(${rgbOne},${rgbTwo},${rgbThree})`;
         });
     });
