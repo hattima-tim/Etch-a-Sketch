@@ -9,13 +9,11 @@ for (let i=0;i<gridSquare;i++){
     squareDiv[i].classList.add('hover');
     container.appendChild(squareDiv[i]);
 }
+let form=document.querySelector("#form")
 let hover=document.querySelectorAll('.hover');
     hover.forEach((containerChilds)=>{
         containerChilds.addEventListener('mouseover',()=>{
-            let rgbOne=Math.floor((Math.random()*255)+160);
-            let rgbTwo=Math.floor((Math.random()*159)+60);
-            let rgbThree=Math.floor((Math.random()*59));
-            containerChilds.style.background=`rgb(${rgbOne},${rgbTwo},${rgbThree})`;
+            containerChilds.style.background=`${form[0].value}`    
         });
     });
 }
